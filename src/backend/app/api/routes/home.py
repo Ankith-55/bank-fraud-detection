@@ -1,7 +1,8 @@
 from fastapi import APIRouter
-from app.core.logging import get_logger
+from backend.app.core.logging import get_logger
 router=APIRouter(prefix="/home")
 logger=get_logger();
+
 @router.get("/")
 def home():
     logger.info("Home Page Accessed")
