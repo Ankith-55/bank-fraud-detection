@@ -6,3 +6,7 @@ logger=get_logger();
 @router.get("/")
 def home():
     return {"message":"Welcome to the NextGen Bank API"}
+
+@router.get("/check")
+def check():
+    return {"message":"api_endpoint_found"}
