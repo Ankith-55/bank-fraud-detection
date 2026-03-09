@@ -6,7 +6,7 @@ from sqlalchemy import text
 from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
 from sqlalchemy.pool import AsyncAdaptedQueuePool
 from backend.app.core.logging import get_logger
-
+from backend.app.core.model_registry import load_models 
 
 logger = get_logger()
 
@@ -56,6 +56,8 @@ async def init_db() -> None:
 
         for attempt in range(max_retries):
             try:
+                load_models()
+                logger.info("Model loaded successfully")
                 async with engine.begin() as conn:
                     await conn.execute(text("SELECT 1"))
 
