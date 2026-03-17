@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Account Activation{% endblock %}
+
+{% block header %}Activate Your Account{% endblock %}
+
+{% block content %}
+Welcome to {{site_name}}!
+Thank you for registering with us. To activate your account, please click the link below:</p>
+{{activation_link}}
+Note: If you cannot click the link, please copy and paste it into your browser.
+This link will expire in {{expire_time}} minutes.
+
+
+
+{% endblock %}
